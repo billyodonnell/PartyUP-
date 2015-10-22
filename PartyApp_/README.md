@@ -1,4 +1,4 @@
-# Hello World PhoneGap Application [![bitHound Score][bithound-img]][bithound-url]
+# PartyUP Splash Screen Phonegap Demo
 
 > A basic splash screen application built with PhoneGap
 
