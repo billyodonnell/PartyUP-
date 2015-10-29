@@ -29,9 +29,9 @@ public class LoginSignupActivity extends Activity {
     /** Called when the activity is first created. */
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        // Get the view from main.xml
+        // Get the view from loginsignup.xml
         setContentView(R.layout.loginsignup);
-        // Locate EditTexts in main.xml
+        // Locate EditTexts in loginsignup.xml
         username = (EditText) findViewById(R.id.username);
         password = (EditText) findViewById(R.id.password);
 

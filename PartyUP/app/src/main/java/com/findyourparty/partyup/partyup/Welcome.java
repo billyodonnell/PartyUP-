@@ -21,7 +21,7 @@ public class Welcome extends Activity {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        // Get the view from singleitemview.xml
+        // Get the view from welcome.xml
         setContentView(R.layout.welcome);
 
         // Retrieve current user from Parse.com

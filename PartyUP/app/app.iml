@@ -98,10 +98,9 @@
     <orderEntry type="library" exported="" name="multidex-1.0.1" level="project" />
     <orderEntry type="library" exported="" name="bolts-android-1.2.1" level="project" />
     <orderEntry type="library" exported="" name="design-23.1.0" level="project" />
-    <orderEntry type="library" exported="" name="ParseFacebookUtilsV3-1.10.3" level="project" />
     <orderEntry type="library" exported="" name="appcompat-v7-23.1.0" level="project" />
-    <orderEntry type="library" exported="" name="ParseCrashReporting-1.10.3" level="project" />
     <orderEntry type="library" exported="" name="ParseFacebookUtilsV4-1.10.3" level="project" />
+    <orderEntry type="library" exported="" name="ParseCrashReporting-1.10.3" level="project" />
     <orderEntry type="library" exported="" name="support-annotations-23.1.0" level="project" />
   </component>
 </module>
