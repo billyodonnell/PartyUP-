@@ -41,5 +41,16 @@ public class MainActivity extends Activity {
             }
         }
 
+/**
+ * Trevor's time to shine on 11/2/2015.
+ */
+
+        Intent intent = new Intent(MainActivity.this,
+                CreatePartyActivity.class);
+        startActivity(intent);
+
+
+
+
     }
 }
