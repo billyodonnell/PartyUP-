@@ -36,14 +36,36 @@
         android:id="@+id/login"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/password"
-        android:text="@string/LoginBtn" />
+        android:text="@string/LoginBtn"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_below="@+id/password" />
 
-    <Button
-        android:id="@+id/signup"
-        android:layout_width="fill_parent"
+    <TextView
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:text="Don&apos;t have an account yet?"
+        android:id="@+id/loginToRegistertxt"
+        android:layout_marginTop="24dp"
+        android:linksClickable="false"
         android:layout_below="@+id/login"
-        android:text="@string/SignupBtn" />
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginLeft="69dp"
+        android:layout_marginStart="69dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Register!"
+        android:id="@+id/register_from_logintxt"
+        android:layout_marginLeft="7dp"
+        android:layout_marginStart="7dp"
+        android:layout_alignTop="@+id/loginToRegistertxt"
+        android:layout_toRightOf="@+id/loginToRegistertxt"
+        android:layout_toEndOf="@+id/loginToRegistertxt"
+        android:singleLine="false"
+        android:clickable="true" />
+
 
 </RelativeLayout>
