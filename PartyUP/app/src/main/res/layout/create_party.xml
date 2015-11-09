@@ -10,6 +10,6 @@
         android:layout_height="wrap_content"
         android:text="@string/CreatePartyBtn"
         android:id="@+id/createparty"
-        android:clickable="true"
-        android:enabled="true" />
+        android:clickable="false"
+        android:enabled="false" />
 </LinearLayout>

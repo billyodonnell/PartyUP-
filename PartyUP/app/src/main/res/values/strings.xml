@@ -14,7 +14,7 @@
     <!--<string name="hello">Hello World, MainActivity!</string>-->
     <!--<string name="app_name">Create and display a new Activity</string>-->
     <string name="CreatePartyBtn">Create Party</string>
-
+    <string name="CreateParty">Create Party</string>
 
 
 
