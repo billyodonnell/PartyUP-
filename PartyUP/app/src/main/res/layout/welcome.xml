@@ -24,7 +24,9 @@
         android:id="@+id/logout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
-        android:text="@string/LogoutBtn" />
+        android:text="@string/LogoutBtn"
+        android:layout_alignParentBottom="true"
+        android:layout_toRightOf="@+id/txtwelcome"
+        android:layout_toEndOf="@+id/txtwelcome" />
 
 </RelativeLayout>
