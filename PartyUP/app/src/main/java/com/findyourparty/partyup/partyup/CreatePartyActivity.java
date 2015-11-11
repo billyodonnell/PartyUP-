@@ -41,8 +41,7 @@ public class CreatePartyActivity extends Activity {
         setContentView(R.layout.create_party);
         // Locate Buttons from create_party.xml
         CreatePartyBtn = (Button) findViewById(R.id.createparty);
-
-        // Login Button Click Listener
+        // Create Button Click Listener
         CreatePartyBtn.setOnClickListener(new OnClickListener() {
             public void onClick(View arg0) {
                 Intent intent = new Intent(
