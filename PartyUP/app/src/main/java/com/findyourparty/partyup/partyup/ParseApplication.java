@@ -6,6 +6,7 @@ package com.findyourparty.partyup.partyup;
 
 import com.parse.Parse;
 import com.parse.ParseACL;
+import com.parse.ParseObject;
 
 import com.parse.ParseUser;
 
@@ -16,7 +17,7 @@ public class ParseApplication extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
-
+        ParseObject.registerSubclass(Parties.class);
         // Add your initialization code here
         Parse.initialize(this, "uMwiZTIJCVqhnSnRYWBv0u3mPTA4C1lJuywrEAko", "42sQjyzV6lqF5kzmb1oNoDgaI4PArhDoMbg2WywU");
 

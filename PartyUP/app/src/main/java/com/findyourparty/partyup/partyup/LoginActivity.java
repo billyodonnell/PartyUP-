@@ -51,12 +51,13 @@ public class LoginActivity extends Activity {
                 ParseUser.logInInBackground(usernametxt, passwordtxt,
                         new LogInCallback() {
                             public void done(ParseUser user, ParseException e) {
-
+                                user = ParseUser.getCurrentUser();
                                 if (user != null) {
-                                    // If user exist and authenticated, send user to Welcome.class
+                                    // If user exist and authenticated, send user to CreatePartyActivity.class
+                                    // Name needs to change obviously
                                     Intent intent = new Intent(
                                             LoginActivity.this,
-                                            Welcome.class);
+                                            CreatePartyActivity.class);
                                     startActivity(intent);
                                     Toast.makeText(getApplicationContext(),
                                             "Successfully Logged in",

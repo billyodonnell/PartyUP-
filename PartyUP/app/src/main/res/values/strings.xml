@@ -16,13 +16,14 @@
     <!--<string name="app_name">Create and display a new Activity</string>-->
     <string name="CreatePartyBtn">Create Party</string>
     <string name="CreateParty">Create Party</string>
-
+    <string name="MapViewBtn">Party Map!</string>
     <!--CreatePartyActivity_2-->
     <string name="Title">Title</string>
     <string name="Date">Date</string>
     <string name="Location">Location</string>
     <string name="Details">Details</string>
     <string name="BYOBBtn">byob</string>
+    <string name="title_activity_party_map">PartyMap</string>
 
 
 

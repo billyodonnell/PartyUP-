@@ -6,11 +6,21 @@
     android:clickable="false">
 
     <Button
-        android:layout_width="wrap_content"
+        android:layout_width="136dp"
+        android:layout_height="wrap_content"
+        android:text="@string/MapViewBtn"
+        android:id="@+id/mapview"
+        android:layout_gravity="center_horizontal"
+        android:layout_weight="0.03" />
+
+    <Button
+        android:layout_width="140dp"
         android:layout_height="wrap_content"
         android:text="@string/CreatePartyBtn"
         android:id="@+id/createparty"
-        android:clickable="true">
+        android:clickable="true"
+        android:layout_gravity="center_horizontal"
+        android:layout_weight="0.03">
         <!--android:enabled="false"-->
         android:layout_gravity="center_horizontal" />
     </Button>

@@ -15,3 +15,8 @@
 #-keepclassmembers class fqcn.of.javascript.interface.for.webview {
 #   public *;
 #}
+
+-libraryjars \libs\Parse-1.10.3.jar
+-dontwarn com.parse.**
+-keep class com.parse.** { *; }
+-keepattributes

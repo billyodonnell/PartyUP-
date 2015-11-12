@@ -11,23 +11,25 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
-import android.widget.TextView;
+import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.Toast;
 
 import com.parse.LogInCallback;
 import com.parse.ParseException;
 import com.parse.ParseUser;
+import com.parse.ParseObject;
 import com.parse.SignUpCallback;
 
 public class CreatePartyActivity_2 extends Activity {
 
     Button CreatePartyBtn;
-    Button byob;
+    CheckBox byob;
     String titletxt;
     String datetxt;
     String locationtxt;
     String detailstxt;
+    Boolean byobBool = false;
     EditText title;
     EditText date;
     EditText location;
@@ -40,35 +42,56 @@ public class CreatePartyActivity_2 extends Activity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        // Get the view from loginsignup.xml
+        // Get the view from xml
         setContentView(R.layout.create_party_2);
-        // Locate EditTexts in loginsignup.xml
+        // Locate EditTexts in xml
         title = (EditText) findViewById(R.id.title);
         date = (EditText) findViewById(R.id.date);
         location = (EditText) findViewById(R.id.location);
         details = (EditText) findViewById(R.id.details);
         CreatePartyBtn = (Button) findViewById(R.id.createparty2);
-        byob = (Button) findViewById(R.id.byob);
+        byob = (CheckBox) findViewById(R.id.byob);
 
-        setContentView(R.layout.create_party_2); // twice?
 
         // Retrieve the text entered from the EditText
-        titletxt = title.getText().toString();
-        datetxt = date.getText().toString();
-        locationtxt = location.getText().toString();
-        detailstxt = details.getText().toString();
 
 
-        CreatePartyBtn.setOnClickListener
-                (new OnClickListener() {
+        CreatePartyBtn.setOnClickListener(new OnClickListener() {
                     public void onClick(View arg0) {
-                        // send to Register Activity
-                        Intent intent = new Intent(
-                                CreatePartyActivity_2.this,
-                                CreatePartyActivity.class);
-                        startActivity(intent);
-                        finish();
-                    }
+                        // Retrieve the text entered from the EditText
+                        detailstxt = details.getText().toString();
+                        titletxt = title.getText().toString();
+                        locationtxt = location.getText().toString();
+                        datetxt = date.getText().toString();
+                        if (byob.isChecked()){
+                            byobBool = true;
+                        }
+                        else {
+                            byobBool = false;
+                        }
+
+                            Parties userParty = new Parties();
+                            if (detailstxt != "") {
+                                userParty.setDetails(detailstxt);
+                            }
+                            if (titletxt != "") {
+                                userParty.setTitle(titletxt);
+                            }
+                            if (locationtxt != "") {
+                                userParty.setLocation(locationtxt);
+                            }
+                            if (datetxt != "") {
+                                userParty.setPartyDate(datetxt);
+                            }
+                            userParty.setBYOB(byobBool);
+                            userParty.setOwner(ParseUser.getCurrentUser());
+                            userParty.saveInBackground();
+                            Intent intent = new Intent(
+                                    CreatePartyActivity_2.this,
+                                    CreatePartyActivity.class);
+                            startActivity(intent);
+                            finish();
+                        }
 
                 });
 

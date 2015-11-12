@@ -32,6 +32,7 @@ import com.parse.SignUpCallback;
 public class CreatePartyActivity extends Activity {
 
     // Declare Variables
+    Button MapViewBtn;
     Button CreatePartyBtn;
 
     // @Override
@@ -41,6 +42,7 @@ public class CreatePartyActivity extends Activity {
         setContentView(R.layout.create_party);
         // Locate Buttons from create_party.xml
         CreatePartyBtn = (Button) findViewById(R.id.createparty);
+        MapViewBtn = (Button) findViewById(R.id.mapview);
         // Create Button Click Listener
         CreatePartyBtn.setOnClickListener(new OnClickListener() {
             public void onClick(View arg0) {
@@ -52,6 +54,16 @@ public class CreatePartyActivity extends Activity {
             }
 
 
+        });
+        MapViewBtn.setOnClickListener(new OnClickListener() {
+            public void onClick(View arg0) {
+                Intent intent = new Intent(
+                        CreatePartyActivity.this,
+                        PartyMapActivity.class);
+                startActivity(intent);
+                finish();
+
+            }
         });
 
 

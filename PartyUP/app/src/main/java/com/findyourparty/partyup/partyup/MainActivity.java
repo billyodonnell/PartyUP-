@@ -29,7 +29,7 @@ public class MainActivity extends Activity {
             ParseUser currentUser = ParseUser.getCurrentUser();
             if (currentUser != null) {
                 // Send logged in users to Welcome.class
-                Intent intent = new Intent(MainActivity.this, Welcome.class);
+                Intent intent = new Intent(MainActivity.this, CreatePartyActivity.class);
                 startActivity(intent);
                 finish();
             } else {
@@ -43,13 +43,13 @@ public class MainActivity extends Activity {
 
 /**
  * Trevor's time to shine on 11/2/2015.
- */
+ *
 
         Intent intent = new Intent(MainActivity.this,
                 CreatePartyActivity.class);
         startActivity(intent);
         finish();
-
+*/
 
 
 
