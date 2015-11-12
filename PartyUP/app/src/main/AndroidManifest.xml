@@ -28,6 +28,10 @@
         </activity>
         <activity android:name=".Welcome" >
         </activity>
+        <activity android:name=".CreatePartyActivity" >
+        </activity>
+        <activity android:name=".CreatePartyActivity_2" >
+        </activity>
     </application>
 
 </manifest>
