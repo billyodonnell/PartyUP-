@@ -1,5 +1,6 @@
 package com.findyourparty.partyup.partyup;
 import com.parse.*;
+import java.util.Date;
 
 /**
  * Created by billy_000 on 11/12/2015.
@@ -11,22 +12,24 @@ import com.parse.*;
 public class Parties extends ParseObject {
     private String details;
     private String title;
-    private String location;
+    private String address;
     private String date;
     private Boolean BYOB;
+    //private Date partyDate;
 
     public Parties() {
         super();
     }
 
 
-    public Parties(String details, String title, String location, String date, boolean BYOB) {
+    public Parties(String details, String title, String address, String date, boolean BYOB) {
         super();
         setDetails(details);
         setTitle(title);
-        setLocation(location);
+        setAddress(address);
         setPartyDate(date);
         setBYOB(BYOB);
+       // setDate(partyDate);
     }
 
     public String getDetails() {
@@ -37,8 +40,10 @@ public class Parties extends ParseObject {
         return getString("title");
     }
 
-    public String getLocation() {
-        return getString("location");
+  //  public Date getDate() { return getDate("partyDate"); }
+
+    public String getAddress() {
+        return getString("address");
     }
 
     public String getPartyDate() {
@@ -48,6 +53,11 @@ public class Parties extends ParseObject {
     public boolean getBYOB() {
         return getBoolean("BYOB");
     }
+    public ParseUser getOwner() {
+        return getParseUser("owner");
+    }
+
+//   public void setDate(Date value) { put("partyDate", value);}
 
     public void setDetails(String value) {
         put("details", value);
@@ -57,8 +67,8 @@ public class Parties extends ParseObject {
         put("title", value);
     }
 
-    public void setLocation(String value) {
-        put("location", value);
+    public void setAddress(String value) {
+        put("address", value);
     }
 
     public void setPartyDate(String value) {
@@ -68,13 +78,12 @@ public class Parties extends ParseObject {
     public void setBYOB(boolean value) {
         put("BYOB", value);
     }
-
-    public ParseUser getUser() {
-        return getParseUser("owner");
-    }
-
     public void setOwner(ParseUser user) {
         put("owner", user);
     }
+
+    //public String getUser() { return getString("user"); }
+
+   // public void setUser(String value) {put("user", value);}
 }
 

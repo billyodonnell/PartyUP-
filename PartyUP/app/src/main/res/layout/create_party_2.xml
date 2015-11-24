@@ -23,7 +23,14 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/Date"
-        android:id="@+id/txtdate" />
+        android:id="@+id/txtdate"
+        android:textAlignment="center" />
+
+    <!--DatePicker
+        android:layout_width="wrap_content"
+        android:layout_height="91dp"
+        android:id="@+id/partyDate"
+        android:datePickerMode="spinner" /-->
 
     <EditText
         android:layout_width="match_parent"
@@ -33,13 +40,13 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/Location"
-        android:id="@+id/txtlocation" />
+        android:text="@string/Address"
+        android:id="@+id/txtaddress" />
 
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/location" />
+        android:id="@+id/address" />
 
     <TextView
         android:layout_width="match_parent"
@@ -49,9 +56,8 @@
 
     <EditText
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/details"
-        android:layout_weight="0.90" />
+        android:layout_height="121dp"
+        android:id="@+id/details" />
 
     <CheckBox
         android:layout_width="wrap_content"

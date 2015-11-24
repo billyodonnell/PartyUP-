@@ -9,34 +9,61 @@ import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
-import android.app.Activity;
-import android.content.Intent;
-import android.graphics.Paint;
-import android.os.Bundle;
-import android.view.View;
-import android.view.View.OnClickListener;
-import android.widget.Button;
-import android.widget.TextView;
-import android.widget.EditText;
-import android.widget.Toast;
-
-import com.parse.LogInCallback;
+import android.location.Geocoder;
+import android.util.Log;
+import android.location.Address;
+import java.util.List;
+import java.util.*;
+import java.util.Locale;
 import com.parse.ParseException;
-import com.parse.ParseUser;
+import com.parse.ParseObject;
+import com.parse.ParseQuery;
+import com.parse.FindCallback;
+import java.util.ArrayList;
+import android.widget.Toast;
+import java.io.IOException;
 
 public class PartyMapActivity extends FragmentActivity implements OnMapReadyCallback {
 
     private GoogleMap mMap;
 
+    public ArrayList<String> ourAddresses;
+    public List<Address> addressList;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        ParseQuery<ParseObject> partyData = new ParseQuery<ParseObject>("Parties");
+        partyData.selectKeys(Arrays.asList("address"));
+        partyData.findInBackground(new FindCallback<ParseObject>() {
+            @Override
+            public void done(List<ParseObject> addresses, ParseException e) {
+                if (e == null) {
+                    ArrayList<String> addressTexts = new ArrayList<String>();
+                    for (ParseObject address : addresses) {
+                        addressTexts.add(address.getString("address"));
+                    }
+                    ourAddresses = addressTexts;
+                    Toast.makeText(getApplicationContext(),
+                            "query error: " + e,
+                            Toast.LENGTH_LONG).show();
+                } else {
+                    Toast.makeText(getApplicationContext(), "Successful.", Toast.LENGTH_LONG).show();
+                }
+            }
+        });
+
+
         setContentView(R.layout.partymapactivity);
         // Obtain the SupportMapFragment and get notified when the map is ready to be used.
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.map);
+        mapFragment.getMap().setMyLocationEnabled(true);
         mapFragment.getMapAsync(this);
     }
+
+
 
 
     /**
@@ -51,10 +78,24 @@ public class PartyMapActivity extends FragmentActivity implements OnMapReadyCall
     @Override
     public void onMapReady(GoogleMap googleMap) {
         mMap = googleMap;
+        Geocoder geocoder = new Geocoder(this, Locale.getDefault());
+    for (int i = 0; i < ourAddresses.size(); i++) {
+        try {
+            String myString;
+            myString = ourAddresses.get(i);
+            addressList = geocoder.getFromLocationName(myString, 1);
+            if (addressList != null && addressList.size() > 0) {
+                Address address = addressList.get(0);
 
-        // Add a marker in Sydney and move the camera
-        LatLng sydney = new LatLng(-34, 151);
-        mMap.addMarker(new MarkerOptions().position(sydney).title("Marker in Sydney"));
-        mMap.moveCamera(CameraUpdateFactory.newLatLng(sydney));
-    }
+            }
+        } catch(IOException ie) {
+            ie.printStackTrace();
+        }
+        }
+        for (int i = 0; i < addressList.size(); i++)
+            mMap.addMarker(new MarkerOptions()
+                    .position(new LatLng(addressList.get(i).getLatitude(), addressList.get(i).getLongitude())));
+     }
+
 }
+

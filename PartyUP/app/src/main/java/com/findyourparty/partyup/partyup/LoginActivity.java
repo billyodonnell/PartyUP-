@@ -67,10 +67,10 @@ public class LoginActivity extends Activity {
                                     int error = e.getCode();
 
                                     Toast.makeText(
-                                            getApplicationContext(),
-                                            "No such user exist, please register!",
-                                            Toast.LENGTH_LONG).show();
-                                }
+                                        getApplicationContext(),
+                                        "No such user exist, please register!",
+                                        Toast.LENGTH_LONG).show();
+                            }
                             }
                         });
             }

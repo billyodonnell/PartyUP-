@@ -20,7 +20,7 @@
     <!--CreatePartyActivity_2-->
     <string name="Title">Title</string>
     <string name="Date">Date</string>
-    <string name="Location">Location</string>
+    <string name="Address">Address</string>
     <string name="Details">Details</string>
     <string name="BYOBBtn">byob</string>
     <string name="title_activity_party_map">PartyMap</string>
