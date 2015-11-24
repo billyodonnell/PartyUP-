@@ -27,8 +27,9 @@ public class PartyMapActivity extends FragmentActivity implements OnMapReadyCall
 
     private GoogleMap mMap;
 
-    public ArrayList<String> ourAddresses;
+    public List<String> ourAddresses;
     public List<Address> addressList;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,7 +41,7 @@ public class PartyMapActivity extends FragmentActivity implements OnMapReadyCall
             @Override
             public void done(List<ParseObject> addresses, ParseException e) {
                 if (e == null) {
-                    ArrayList<String> addressTexts = new ArrayList<String>();
+                    List<String> addressTexts = new ArrayList<String>();
                     for (ParseObject address : addresses) {
                         addressTexts.add(address.getString("address"));
                     }
@@ -79,6 +80,7 @@ public class PartyMapActivity extends FragmentActivity implements OnMapReadyCall
     public void onMapReady(GoogleMap googleMap) {
         mMap = googleMap;
         Geocoder geocoder = new Geocoder(this, Locale.getDefault());
+        if (ourAddresses != null){
     for (int i = 0; i < ourAddresses.size(); i++) {
         try {
             String myString;
@@ -91,11 +93,16 @@ public class PartyMapActivity extends FragmentActivity implements OnMapReadyCall
         } catch(IOException ie) {
             ie.printStackTrace();
         }
-        }
+        }}
+        if (addressList != null){
         for (int i = 0; i < addressList.size(); i++)
             mMap.addMarker(new MarkerOptions()
                     .position(new LatLng(addressList.get(i).getLatitude(), addressList.get(i).getLongitude())));
      }
+        mMap.addMarker(new MarkerOptions()
+                    .position(new LatLng(38.307412, -122.705961)));
+    }
+
 
 }
 
