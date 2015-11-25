@@ -57,7 +57,7 @@ public class LoginActivity extends Activity {
                                     // Name needs to change obviously
                                     Intent intent = new Intent(
                                             LoginActivity.this,
-                                            CreatePartyActivity.class);
+                                            HomeScreenActivity.class);
                                     startActivity(intent);
                                     Toast.makeText(getApplicationContext(),
                                             "Successfully Logged in",

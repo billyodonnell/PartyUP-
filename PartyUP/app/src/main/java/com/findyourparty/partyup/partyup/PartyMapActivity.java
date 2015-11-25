@@ -29,7 +29,7 @@ public class PartyMapActivity extends FragmentActivity implements OnMapReadyCall
 
     public List<String> ourAddresses;
     public List<Address> addressList;
-
+    public Address address;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,11 +46,11 @@ public class PartyMapActivity extends FragmentActivity implements OnMapReadyCall
                         addressTexts.add(address.getString("address"));
                     }
                     ourAddresses = addressTexts;
+                    Toast.makeText(getApplicationContext(), "Successful.", Toast.LENGTH_LONG).show();
+                } else {
                     Toast.makeText(getApplicationContext(),
                             "query error: " + e,
                             Toast.LENGTH_LONG).show();
-                } else {
-                    Toast.makeText(getApplicationContext(), "Successful.", Toast.LENGTH_LONG).show();
                 }
             }
         });
@@ -87,8 +87,9 @@ public class PartyMapActivity extends FragmentActivity implements OnMapReadyCall
             myString = ourAddresses.get(i);
             addressList = geocoder.getFromLocationName(myString, 1);
             if (addressList != null && addressList.size() > 0) {
-                Address address = addressList.get(0);
-
+                address = addressList.get(0);
+                mMap.addMarker(new MarkerOptions()
+                        .position(new LatLng(address.getLatitude(), address.getLongitude())));
             }
         } catch(IOException ie) {
             ie.printStackTrace();

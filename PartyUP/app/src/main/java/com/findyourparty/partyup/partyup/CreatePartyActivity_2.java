@@ -130,7 +130,7 @@ public class CreatePartyActivity_2 extends Activity {
                                 Toast.LENGTH_LONG).show();
                             Intent intent = new Intent(
                                     CreatePartyActivity_2.this,
-                                    CreatePartyActivity.class);
+                                    HomeScreenActivity.class);
                             startActivity(intent);
                             finish();
                         }
