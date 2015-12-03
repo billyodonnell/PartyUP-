@@ -29,7 +29,7 @@ public class PartyMapActivity extends FragmentActivity implements OnMapReadyCall
 
     public List<String> ourAddresses;
     public List<Address> addressList;
-
+    public Address address;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,11 +46,11 @@ public class PartyMapActivity extends FragmentActivity implements OnMapReadyCall
                         addressTexts.add(address.getString("address"));
                     }
                     ourAddresses = addressTexts;
+                    Toast.makeText(getApplicationContext(), "Successful.", Toast.LENGTH_LONG).show();
+                } else {
                     Toast.makeText(getApplicationContext(),
                             "query error: " + e,
                             Toast.LENGTH_LONG).show();
-                } else {
-                    Toast.makeText(getApplicationContext(), "Successful.", Toast.LENGTH_LONG).show();
                 }
             }
         });
@@ -85,22 +85,23 @@ public class PartyMapActivity extends FragmentActivity implements OnMapReadyCall
         try {
             String myString;
             myString = ourAddresses.get(i);
+            Log.d("myTag", myString);
             addressList = geocoder.getFromLocationName(myString, 1);
-            if (addressList != null && addressList.size() > 0) {
-                Address address = addressList.get(0);
 
+            if (addressList != null && addressList.size() > 0) {
+               // Toast.makeText(getApplicationContext(),
+                //        "address list is not null",
+                //        Toast.LENGTH_LONG).show();
+                address = addressList.get(0);
+                mMap.addMarker(new MarkerOptions()
+                        .position(new LatLng(address.getLatitude(), address.getLongitude())));
             }
         } catch(IOException ie) {
             ie.printStackTrace();
         }
         }}
-        if (addressList != null){
-        for (int i = 0; i < addressList.size(); i++)
-            mMap.addMarker(new MarkerOptions()
-                    .position(new LatLng(addressList.get(i).getLatitude(), addressList.get(i).getLongitude())));
-     }
-        mMap.addMarker(new MarkerOptions()
-                    .position(new LatLng(38.307412, -122.705961)));
+     //   mMap.addMarker(new MarkerOptions()
+      //              .position(new LatLng(38.307412, -122.705961)));
     }
 
 
