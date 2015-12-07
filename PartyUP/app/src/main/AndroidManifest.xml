@@ -9,17 +9,19 @@
         android:targetSdkVersion="23" />
 
     <uses-permission android:name="android.permission.INTERNET" />
-
+    <uses-permission android:name="myapp.permission.MAPS_RECEIVE"/>
     <!--
          The ACCESS_COARSE/FINE_LOCATION permissions are not required to use
          Google Maps Android API v2, but you must specify either coarse or fine
          location permissions for the 'MyLocation' functionality. 
     -->
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
-
+    <uses-permission android:name="com.google.android.providers.gsf.permission.READ_GSERVICES"/>
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+
 
     <application
         android:name="com.findyourparty.partyup.partyup.ParseApplication"
@@ -41,12 +43,10 @@
         </activity>
         <activity android:name=".CreatePartyActivity" >
         </activity>
-        <activity android:name=".CreatePartyActivity_2" >
-        </activity>
         <activity android:name=".HomeScreenActivity" >
         </activity>
-
-
+        <activity android:name=".ViewPartyActivity" >
+        </activity>
     <!--
              The API key for Google Maps-based APIs is defined as a string resource.
              (See the file "res/values/google_maps_api.xml").

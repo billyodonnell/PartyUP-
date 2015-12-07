@@ -24,6 +24,7 @@ import java.util.ArrayList;
 import android.widget.Toast;
 import java.io.IOException;
 
+
 public class PartyMapActivity extends FragmentActivity implements OnMapReadyCallback {
 
     private GoogleMap mMap;

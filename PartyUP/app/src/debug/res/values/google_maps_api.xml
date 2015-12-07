@@ -4,7 +4,10 @@
 
     To get one, follow this link, follow the directions and press "Create" at the end:
 
+    https://console.developers.google.com/flows/enableapi?apiid=maps_android_backend&keyType=CLIENT_SIDE_ANDROID&r=D4:2F:CF:52:41:BC:81:D8:FB:09:28:44:FA:95:4B:3F:C2:E4:3F:59com.findyourparty.partyup.partyup
+
     https://console.developers.google.com/flows/enableapi?apiid=maps_android_backend&keyType=CLIENT_SIDE_ANDROID&r=10:0B:E4:B0:CB:80:5F:74:4F:61:6A:C7:96:52:A8:22:BC:03:93:55%3Bcom.findyourparty.partyup.partyup
+
 
     You can also add your credentials to an existing key, using this line:
     10:0B:E4:B0:CB:80:5F:74:4F:61:6A:C7:96:52:A8:22:BC:03:93:55;com.findyourparty.partyup.partyup
@@ -14,8 +17,10 @@
 
     Once you have your key (it starts with "AIza"), replace the "google_maps_key"
     string in this file.
+
+    AIzaSyAbh6PPoSpdkXeaYL4_-Ooy4V6YiAe3MiY
     -->
     <string name="google_maps_key" translatable="false" templateMergeStrategy="preserve">
-        AIzaSyAbh6PPoSpdkXeaYL4_-Ooy4V6YiAe3MiY
+        AIzaSyBVSRZayRaB9rskwBQ2RxkKYphAnJPUUIA
     </string>
 </resources>

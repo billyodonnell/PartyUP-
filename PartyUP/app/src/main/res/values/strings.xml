@@ -17,13 +17,14 @@
     <string name="CreatePartyBtn">Create Party</string>
     <string name="CreateParty">Create Party</string>
     <string name="MapViewBtn">Party Map!</string>
-    <!--CreatePartyActivity_2-->
+    <!--CreatePartyActivity-->
     <string name="Title">Title</string>
     <string name="Date">Date</string>
     <string name="Address">Address</string>
     <string name="Details">Details</string>
     <string name="BYOBBtn">byob</string>
     <string name="title_activity_party_map">PartyMap</string>
+    <string name="bruhBtn">bruh</string>
 
 
 
