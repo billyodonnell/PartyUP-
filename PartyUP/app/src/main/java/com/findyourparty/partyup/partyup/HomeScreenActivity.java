@@ -20,6 +20,7 @@ public class HomeScreenActivity extends Activity {
     ImageButton searchBtn;
     ImageButton nearbyPartiesBtn;
     ImageButton profileBtn;
+    TextView bruhBtn; // for the list view
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -39,7 +40,7 @@ public class HomeScreenActivity extends Activity {
             public void onClick(View arg0) {
                 Intent intent = new Intent(
                         HomeScreenActivity.this,
-                        CreatePartyActivity_2.class);
+                        CreatePartyActivity.class);
                 startActivity(intent);
                 finish();
             }
@@ -49,7 +50,7 @@ public class HomeScreenActivity extends Activity {
             public void onClick(View arg0) {
                 Intent intent = new Intent(
                         HomeScreenActivity.this,
-                        CreatePartyActivity_2.class);
+                        CreatePartyActivity.class);
                 startActivity(intent);
                 finish();
             }
@@ -83,6 +84,20 @@ public class HomeScreenActivity extends Activity {
                 finish();
             }
         });
+
+        /* for the ListView */
+        bruhBtn = (TextView) findViewById(R.id.bruh);
+
+        bruhBtn.setOnClickListener(new OnClickListener() {
+            public void onClick(View arg0) {
+                Intent intent = new Intent(
+                        HomeScreenActivity.this,
+                        ViewPartyActivity.class);
+                startActivity(intent);
+                finish();
+            }
+        });
+
 
     }
 }

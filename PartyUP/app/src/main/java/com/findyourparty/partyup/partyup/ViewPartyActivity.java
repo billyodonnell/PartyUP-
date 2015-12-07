@@ -1,7 +1,7 @@
 package com.findyourparty.partyup.partyup;
 
 /**
- * Created by Trevor on 11/2/15.
+ * Created by Trevor on 12/2/15.
  */
 
 import android.app.Activity;
@@ -24,9 +24,11 @@ import android.os.Handler;
 import java.util.Calendar;
 import java.util.Date;
 import java.text.DateFormat;
-public class CreatePartyActivity extends Activity {
 
-    Button CreatePartyBtn;
+
+public class ViewPartyActivity extends Activity {
+
+    Button backBtn;
     CheckBox byob;
     String titletxt;
     String datetxt;
@@ -46,8 +48,11 @@ public class CreatePartyActivity extends Activity {
     Date myDate;
     DatePickerDialog datePickerDialog;
     DateFormat dateFormatter;
+    /**
+     * Called when the activity is first created.
+     */
 
-    /* called when the activity is first created. */
+/*
     public DatePickerDialog.OnDateSetListener dateOnDateSetListener = new DatePickerDialog.OnDateSetListener() {
         @Override
         public void onDateSet(DatePicker view, int selectedYear, int selectedMonth, int selectedDay) {
@@ -62,21 +67,23 @@ public class CreatePartyActivity extends Activity {
         }
         return null;
     }
+*/
 
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
         // Get the view from xml
-        setContentView(R.layout.create_party);
+        setContentView(R.layout.view_party);
         // Locate EditTexts in xml
-        title = (EditText) findViewById(R.id.title);
-        datePick = (TextView) findViewById(R.id.date);
-        address = (EditText) findViewById(R.id.address);
-        details = (EditText) findViewById(R.id.details);
-        CreatePartyBtn = (Button) findViewById(R.id.createparty);
-        byob = (CheckBox) findViewById(R.id.byob);
+        //title = (EditText) findViewById(R.id.title);
+        //datePick = (TextView) findViewById(R.id.date);
+        //address = (EditText) findViewById(R.id.address);
+        //details = (EditText) findViewById(R.id.details);
+        backBtn = (Button) findViewById(R.id.back);
+        //byob = (CheckBox) findViewById(R.id.byob);
         //partyDate = (DatePicker) findViewById(R.id.partyDate);
         // Retrieve the text entered from the EditText
+/*
         datePick.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View arg0) {
@@ -88,10 +95,11 @@ public class CreatePartyActivity extends Activity {
 
             }
         });
-
-        CreatePartyBtn.setOnClickListener(new OnClickListener() {
+*/
+        backBtn.setOnClickListener(new OnClickListener() {
             public void onClick(View arg0) {
                 // Retrieve the text entered from the EditText
+/*
                 detailstxt = details.getText().toString();
                 titletxt = title.getText().toString();
                 addresstxt = address.getText().toString();
@@ -125,8 +133,9 @@ public class CreatePartyActivity extends Activity {
                         getApplicationContext(),
                         "Party has been created!",
                         Toast.LENGTH_LONG).show();
+*/
                 Intent intent = new Intent(
-                        CreatePartyActivity.this,
+                        ViewPartyActivity.this,
                         HomeScreenActivity.class);
                 startActivity(intent);
                 finish();

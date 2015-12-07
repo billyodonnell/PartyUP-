@@ -12,12 +12,13 @@
         android:id="@+id/txttitle"
         android:autoText="false" />
 
-    <EditText
+    <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:inputType="textPersonName"
         android:ems="10"
-        android:id="@+id/title" />
+        android:id="@+id/title"
+        android:text="          bruh" />
 
     <TextView
         android:layout_width="match_parent"
@@ -32,10 +33,11 @@
         android:id="@+id/partyDate"
         android:datePickerMode="spinner" /-->
 
-    <EditText
+    <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/date" />
+        android:id="@+id/date"
+        android:text="          3-12-16" />
 
     <TextView
         android:layout_width="match_parent"
@@ -43,10 +45,11 @@
         android:text="@string/Address"
         android:id="@+id/txtaddress" />
 
-    <EditText
+    <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/address" />
+        android:id="@+id/address"
+        android:text="          1000 East Way" />
 
     <TextView
         android:layout_width="match_parent"
@@ -54,23 +57,24 @@
         android:text="@string/Details"
         android:id="@+id/txtdetails" />
 
-    <EditText
+    <TextView
         android:layout_width="match_parent"
         android:layout_height="121dp"
-        android:id="@+id/details" />
+        android:id="@+id/details"
+        android:text="          lets do it" />
 
     <CheckBox
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/BYOBBtn"
         android:id="@+id/byob"
-        android:checked="false" />
+        android:checked="true" />
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Create"
-        android:id="@+id/createparty2"
+        android:text="Back"
+        android:id="@+id/back"
         android:layout_gravity="center_horizontal"
         android:clickable="true" />
 
