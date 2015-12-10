@@ -10,7 +10,10 @@
         android:layout_height="wrap_content"
         android:text="@string/Title"
         android:id="@+id/txttitle"
-        android:autoText="false" />
+        android:autoText="false"
+        android:textSize="30sp"
+        android:elegantTextHeight="false"
+        android:paddingLeft="10dp" />
 
     <TextView
         android:layout_width="match_parent"
@@ -18,14 +21,21 @@
         android:inputType="textPersonName"
         android:ems="10"
         android:id="@+id/title"
-        android:text="          bruh" />
+        android:textColor="#ffffff"
+
+        android:textSize="20sp"
+        android:layout_gravity="center_horizontal"
+        android:background="#649e9eae"
+        android:paddingLeft="20dp" />
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/Date"
         android:id="@+id/txtdate"
-        android:textAlignment="center" />
+        android:textAlignment="center"
+        android:textSize="30sp"
+        android:paddingLeft="10dp" />
 
     <!--DatePicker
         android:layout_width="wrap_content"
@@ -37,31 +47,47 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/date"
-        android:text="          3-12-16" />
+        android:textSize="20sp"
+        android:textColor="#ffffff"
+        android:layout_gravity="center_horizontal"
+        android:background="#649e9eae"
+        android:paddingLeft="20dp" />
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/Address"
-        android:id="@+id/txtaddress" />
+        android:id="@+id/txtaddress"
+        android:textSize="30sp"
+        android:paddingLeft="10dp" />
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/address"
-        android:text="          1000 East Way" />
+        android:textSize="20sp"
+        android:layout_gravity="center_horizontal"
+        android:background="#649e9eae"
+        android:textColor="#ffffff"
+        android:paddingLeft="20dp" />
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/Details"
-        android:id="@+id/txtdetails" />
+        android:id="@+id/txtdetails"
+        android:textSize="30sp"
+        android:paddingLeft="10dp" />
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="121dp"
         android:id="@+id/details"
-        android:text="          lets do it" />
+        android:layout_weight="0.72"
+        android:textSize="20sp"
+        android:background="#649e9eae"
+        android:textColor="#ffffff"
+        android:paddingLeft="20dp" />
 
     <CheckBox
         android:layout_width="wrap_content"
