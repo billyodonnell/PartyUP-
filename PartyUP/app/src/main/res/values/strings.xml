@@ -25,7 +25,8 @@
     <string name="BYOBBtn">byob</string>
     <string name="title_activity_party_map">PartyMap</string>
     <string name="bruhBtn">bruh</string>
-
+    <string name="partylistView">partylistView</string>
+    <string name="ic_launcher.png">myIcon</string>
 
 
 

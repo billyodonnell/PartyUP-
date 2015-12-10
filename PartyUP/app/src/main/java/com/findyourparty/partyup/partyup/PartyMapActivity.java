@@ -1,5 +1,6 @@
 package com.findyourparty.partyup.partyup;
 
+import android.content.Intent;
 import android.support.v4.app.FragmentActivity;
 import android.os.Bundle;
 
@@ -21,6 +22,9 @@ import com.parse.ParseObject;
 import com.parse.ParseQuery;
 import com.parse.FindCallback;
 import java.util.ArrayList;
+
+import android.view.View;
+import android.widget.Button;
 import android.widget.Toast;
 import java.io.IOException;
 
@@ -28,17 +32,19 @@ import java.io.IOException;
 public class PartyMapActivity extends FragmentActivity implements OnMapReadyCallback {
 
     private GoogleMap mMap;
-
+    Button backBtn;
     public List<String> ourAddresses;
     public List<String> ourTitles;
     public List<String> ourDetails;
     public List<Address> addressList;
     public Address address;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
+        backBtn = (Button) findViewById(R.id.back);
         ParseQuery<ParseObject> partyData = new ParseQuery<ParseObject>("Parties");
         partyData.selectKeys(Arrays.asList("address", "title", "details"));
         partyData.findInBackground(new FindCallback<ParseObject>() {
@@ -65,7 +71,6 @@ public class PartyMapActivity extends FragmentActivity implements OnMapReadyCall
             }
         });
 
-
         setContentView(R.layout.partymapactivity);
         // Obtain the SupportMapFragment and get notified when the map is ready to be used.
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
@@ -73,9 +78,6 @@ public class PartyMapActivity extends FragmentActivity implements OnMapReadyCall
         mapFragment.getMap().setMyLocationEnabled(true);
         mapFragment.getMapAsync(this);
     }
-
-
-
 
     /**
      * Manipulates the map once available.
@@ -90,6 +92,7 @@ public class PartyMapActivity extends FragmentActivity implements OnMapReadyCall
     public void onMapReady(GoogleMap googleMap) {
         mMap = googleMap;
         Geocoder geocoder = new Geocoder(this, Locale.getDefault());
+
         if (ourAddresses != null){
             ArrayList<Marker> markers = new ArrayList<Marker>();
             for (int i = 0; i < ourAddresses.size(); i++) {
@@ -109,17 +112,11 @@ public class PartyMapActivity extends FragmentActivity implements OnMapReadyCall
                 myMarker.setSnippet(ourDetails.get(j));
                 myMarker.showInfoWindow();
             }
+
+
         } catch(IOException ie) {
             ie.printStackTrace();
-        }
-        }}
-       // if (addressList != null){
-       // for (int i = 0; i < addressList.size(); i++)
-        //    mMap.addMarker(new MarkerOptions()
-        //            .position(new LatLng(addressList.get(i).getLatitude(), addressList.get(i).getLongitude())));
-     //}
-       // mMap.addMarker(new MarkerOptions()
-          //          .position(new LatLng(38.307412, -122.705961)));
+        }}}
     }
 
 
