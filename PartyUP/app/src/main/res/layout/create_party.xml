@@ -58,13 +58,32 @@
         android:text="@string/BYOBBtn"
         android:id="@+id/byob"
         android:checked="false" />
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:layout_gravity="center_horizontal"
+    android:gravity="center_horizontal"
+    android:weightSum="1">
 
     <Button
+        style="@style/Button"
+        android:background="@drawable/blue_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Back"
+        android:id="@+id/back"
+        android:layout_weight="0.08" />
+
+    <Button
+        style="@style/Button"
+        android:background="@drawable/blue_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Create"
         android:id="@+id/createparty"
-        android:layout_gravity="center_horizontal"
         android:clickable="true" />
+
+</LinearLayout>
 
 </LinearLayout>

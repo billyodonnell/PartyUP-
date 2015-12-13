@@ -27,6 +27,7 @@ import java.text.DateFormat;
 public class CreatePartyActivity extends Activity {
 
     Button CreatePartyBtn;
+    Button BackBtn;
     CheckBox byob;
     String titletxt;
     String datetxt;
@@ -74,6 +75,7 @@ public class CreatePartyActivity extends Activity {
         address = (EditText) findViewById(R.id.address);
         details = (EditText) findViewById(R.id.details);
         CreatePartyBtn = (Button) findViewById(R.id.createparty);
+        BackBtn = (Button) findViewById(R.id.back);
         byob = (CheckBox) findViewById(R.id.byob);
         //partyDate = (DatePicker) findViewById(R.id.partyDate);
         // Retrieve the text entered from the EditText
@@ -89,6 +91,16 @@ public class CreatePartyActivity extends Activity {
             }
         });
 
+        BackBtn.setOnClickListener(new OnClickListener() {
+            public void onClick(View arg0) {
+                Intent intent = new Intent(
+                        CreatePartyActivity.this,
+                        HomeScreenActivity.class);
+                startActivity(intent);
+                finish();
+            }
+
+        });
         CreatePartyBtn.setOnClickListener(new OnClickListener() {
             public void onClick(View arg0) {
                 // Retrieve the text entered from the EditText
