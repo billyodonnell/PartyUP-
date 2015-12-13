@@ -95,7 +95,7 @@ public class HomeScreenActivity extends Activity {
                     ourAddresses = addressTexts;
                     ourTitles = titleTexts;
                     ourDetails = detailsTexts;
-                    Toast.makeText(getApplicationContext(), "Successful.", Toast.LENGTH_LONG).show();
+                    //Toast.makeText(getApplicationContext(), "Successful.", Toast.LENGTH_LONG).show();
 
 
                     arrayList = new ArrayList<String>();

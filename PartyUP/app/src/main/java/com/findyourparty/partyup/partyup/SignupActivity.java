@@ -60,7 +60,9 @@ public class SignupActivity extends Activity{
         });
         // Sign up Button Click Listener
         signup.setOnClickListener(new OnClickListener() {
-
+            boolean isEmailValid(CharSequence email) {
+                return android.util.Patterns.EMAIL_ADDRESS.matcher(email).matches();
+            }
             public void onClick(View arg0) {
                 // Retrieve the text entered from the EditText
                 usernametxt = username.getText().toString();
@@ -68,12 +70,17 @@ public class SignupActivity extends Activity{
                 emailtxt = email.getText().toString();
 
                 // Force user to fill up the form
-                if (usernametxt.equals("") && passwordtxt.equals("") && emailtxt.equals("")) {
+                if (usernametxt.equals("") || passwordtxt.equals("") || emailtxt.equals("")) {
                     Toast.makeText(getApplicationContext(),
                             "Please complete the sign up form",
                             Toast.LENGTH_LONG).show();
-
-                } else {
+                }
+                    else if (!isEmailValid(emailtxt)) {
+                    Toast.makeText(getApplicationContext(),
+                            "Please enter a valid .edu email address",
+                            Toast.LENGTH_LONG).show();
+                }
+                 else {
                     // Save new user data into Parse.com Data Storage
                     ParseUser user = new ParseUser();
                     user.setUsername(usernametxt);

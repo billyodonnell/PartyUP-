@@ -43,8 +43,6 @@ public class PartyMapActivity extends FragmentActivity implements OnMapReadyCall
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
-        backBtn = (Button) findViewById(R.id.back);
         ParseQuery<ParseObject> partyData = new ParseQuery<ParseObject>("Parties");
         partyData.selectKeys(Arrays.asList("address", "title", "details"));
         partyData.findInBackground(new FindCallback<ParseObject>() {
@@ -70,8 +68,16 @@ public class PartyMapActivity extends FragmentActivity implements OnMapReadyCall
                 }
             }
         });
-
         setContentView(R.layout.partymapactivity);
+        backBtn = (Button) findViewById(R.id.back);
+        backBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(PartyMapActivity.this, HomeScreenActivity.class);
+                startActivityForResult(i, 100);
+            }
+        });
+
         // Obtain the SupportMapFragment and get notified when the map is ready to be used.
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.map);

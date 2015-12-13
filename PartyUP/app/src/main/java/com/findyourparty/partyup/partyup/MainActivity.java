@@ -22,7 +22,7 @@ public class MainActivity extends Activity {
         if (ParseAnonymousUtils.isLinked(ParseUser.getCurrentUser())) {
             // If user is anonymous, send the user to SignupActivity.class
             Intent intent = new Intent(MainActivity.this,
-                    SignupActivity.class);
+                    Splash.class);
             startActivity(intent);
             finish();
         } else {
@@ -37,7 +37,7 @@ public class MainActivity extends Activity {
             } else {
                 // Send user to SignupActivity.class
                 Intent intent = new Intent(MainActivity.this,
-                        SignupActivity.class);
+                        Splash.class);
                 startActivity(intent);
                 finish();
             }
